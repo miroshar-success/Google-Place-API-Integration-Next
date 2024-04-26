@@ -1,0 +1,108 @@
+// :root {
+//     --font-rubik: 'Rubik', sans-serif;
+//     --font-jost: 'Jost', sans-serif;
+//     --font-satisfy: 'Satisfy', sans-serif;
+//     --font-sansita: 'Sansita', sans-serif;
+//   }
+
+  @font-face {
+    font-family: "Rubik";
+    src: url(./fonts/Rubik-Black.ttf) format("truetype");
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url(./fonts/Rubik-ExtraBold.ttf) format("truetype");
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url(./fonts/Rubik-Bold.ttf) format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url(./fonts/Rubik-SemiBold.ttf) format("truetype");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url(./fonts/Rubik-Medium.ttf) format("truetype");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url(./fonts/Rubik-Regular.ttf) format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Rubik";
+    src: url(./fonts/Rubik-Light.ttf) format("truetype");
+    font-weight: 300;
+  }
+
+
+//   Sansita
+  @font-face {
+    font-family: "Sansita";
+    src: url(./fonts/Sansita-Black.ttf) format("truetype");
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: "Sansita";
+    src: url(./fonts/Sansita-ExtraBold.ttf) format("truetype");
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: "Sansita";
+    src: url(./fonts/Sansita-Bold.ttf) format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Sansita";
+    src: url(./fonts/Sansita-Regular.ttf) format("truetype");
+    font-weight: 400;
+  }
+
+//   Satisfy
+  @font-face {
+    font-family: "Satisfy";
+    src: url(./fonts/Satisfy-Regular.ttf) format("truetype");
+    font-weight: 400;
+  }
+//   Jost
+  @font-face {
+    font-family: "Jost";
+    src: url(./fonts/Jost-Light.ttf) format("truetype");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Jost";
+    src: url(./fonts/Jost-Regular.ttf) format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Jost";
+    src: url(./fonts/Jost-Medium.ttf) format("truetype");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Jost";
+    src: url(./fonts/Jost-SemiBold.ttf) format("truetype");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: "Jost";
+    src: url(./fonts/Jost-Bold.ttf) format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Jost";
+    src: url(./fonts/Jost-ExtraBold.ttf) format("truetype");
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: "Jost";
+    src: url(./fonts/Jost-Black.ttf) format("truetype");
+    font-weight: 900;
+  }

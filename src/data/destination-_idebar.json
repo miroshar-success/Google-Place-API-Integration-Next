@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "img": "/assets/img/home2/destination-card-sidebar-img1.png",
+        "tour_palce": "5",
+        "tour_type": "Travel To",
+        "place": " New York"
+    },
+    {
+        "id": "2",
+        "img": "/assets/img/home2/destination-card-sidebar-img2.png",
+        "tour_palce": "8",
+        "tour_type": "Travel To",
+        "place": " Switzerland"
+    },
+    {
+        "id": "3",
+        "img": "/assets/img/home2/destination-card-sidebar-img3.png",
+        "tour_palce": "8",
+        "tour_type": "Travel To",
+        "place": "   Saudi Arab"
+    },
+    {
+        "id": "4",
+        "img": "/assets/img/home2/destination-card-sidebar-img4.png",
+        "tour_palce": "5",
+        "tour_type": "Travel To",
+        "place": "  Indonesia"
+    }
+]

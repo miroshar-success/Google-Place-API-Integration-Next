@@ -1,0 +1,123 @@
+[
+    {
+        "id": "1",
+        "label": "Home",
+        "link": "/",
+        "icon": true,
+        "subMenu": []
+    },
+    {
+        "id": "2",
+        "label": "About",
+        "link": "/about",
+        "icon": false
+    },
+    {
+        "id": "3",
+        "label": "Itinerary",
+        "link": "/package",
+        "icon": true,
+        "subMenu": [
+            {
+                "id": "1",
+                "label": "Itinerary Grid",
+                "link": "/package"
+            },
+            {
+                "id": "3",
+                "label": "Itinerary Top Search",
+                "link": "/package/package-top-search"
+            },
+            {
+                "id": "4",
+                "label": "Itinerary details",
+                "link": "/package/package-details"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "label": "Destination",
+        "link": "/destination",
+        "icon": true,
+        "subMenu": []
+    },
+    {
+        "id": "5",
+        "label": "Pages",
+        "link": "/page",
+        "icon": true,
+        "subMenu": [
+            {
+                "id": "1",
+                "label": "Dashboard",
+                "link": "/customer-dashboard"
+            },
+            {
+                "id": "3",
+                "label": "Activities",
+                "link": "/activities",
+                "icon": true,
+                "subMenu": [
+                    {
+                        "id": "1",
+                        "label": "Activities",
+                        "link": "/activities"
+                    },
+                    {
+                        "id": "2",
+                        "label": "Activities-Details",
+                        "link": "/activities/activities-details"
+                    }
+                ]
+            },
+            {
+                "id": "7",
+                "label": "Tour Guide",
+                "link": "/guide",
+                "icon": true,
+                "subMenu": [
+                    {
+                        "id": "1",
+                        "label": "Tour Guide Style 01",
+                        "link": "/guide"
+                    },
+                    {
+                        "id": "2",
+                        "label": "Tour Guide Style 02",
+                        "link": "/guide/style2"
+                    },
+                    {
+                        "id": "3",
+                        "label": "Tour Guide Style 03",
+                        "link": "/guide/style3"
+                    }
+                    ,
+                    {
+                        "id": "4",
+                        "label": "Tour Guide Style 04",
+                        "link": "/guide/style4"
+                    }
+                    ,
+                    {
+                        "id": "4",
+                        "label": "Tour Guide Style 05",
+                        "link": "/guide/style5"
+                    }
+                ]
+            
+            },
+            {
+                "id": "10",
+                "label": "Faqs",
+                "link": "/faq"
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "label": "Contact",
+        "link": "/contact",
+        "icon": false
+    }
+]

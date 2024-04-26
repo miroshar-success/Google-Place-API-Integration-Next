@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Afghanistan",
+    "locations": "Kabul, Herat, Mazar-i-Sharif",
+    "tourCount": 25
+  },
+  {
+    "name": "Albania",
+    "locations": "Tirana, Durres, Vlore",
+    "tourCount": 45
+  },
+  {
+    "name": "Algeria",
+    "locations": "Algiers, Oran, Constantine",
+    "tourCount": 15
+  },
+  {
+    "name": "Andorra",
+    "locations": "Andorra la Vella",
+    "tourCount": 10
+  },
+  {
+    "name": "Angola",
+    "locations": "Luanda, Huambo, Lobito",
+    "tourCount": 30
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "locations": "St. John's",
+    "tourCount": 5
+  },
+  {
+    "name": "Argentina",
+    "locations": "Buenos Aires, Cordoba, Rosario",
+    "tourCount": 40
+  },
+  {
+    "name": "Armenia",
+    "locations": "Yerevan, Gyumri",
+    "tourCount": 18
+  },
+  {
+    "name": "Australia",
+    "locations": "Sydney, Melbourne, Brisbane",
+    "tourCount": 50
+  },
+  {
+    "name": "Austria",
+    "locations": "Vienna, Graz, Linz",
+    "tourCount": 38
+  }
+]

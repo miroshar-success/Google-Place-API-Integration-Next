@@ -1,0 +1,104 @@
+[
+    {
+        "id": "1",
+        "tag": "10",
+        "title": "Indonesia",
+        "locations": [
+            "Jakarta",
+            "Surabaya",
+            "Medan",
+            "Bali",
+            "Bandung",
+            "Semarang",
+            "Yogyakarta",
+            "Makassar",
+            "Lombok"
+        ],
+        "img": "/assets/img/home3/destination-dropdown-card-img1.png"
+    },
+    {
+        "id": "2",
+        "tag": "10",
+        "title": "Indonesia",
+        "locations": [
+            "Jakarta",
+            "Surabaya",
+            "Medan",
+            "Bali",
+            "Bandung",
+            "Semarang",
+            "Yogyakarta",
+            "Makassar",
+            "Lombok"
+        ],
+        "img": "/assets/img/home3/destination-dropdown-card-img1.png"
+    },
+    {
+        "id": "3",
+        "tag": "10",
+        "title": "Indonesia",
+        "locations": [
+            "Jakarta",
+            "Surabaya",
+            "Medan",
+            "Bali",
+            "Bandung",
+            "Semarang",
+            "Yogyakarta",
+            "Makassar",
+            "Lombok"
+        ],
+        "img": "/assets/img/home3/destination-dropdown-card-img1.png"
+    },
+    {
+        "id": "4",
+        "tag": "10",
+        "title": "Indonesia",
+        "locations": [
+            "Jakarta",
+            "Surabaya",
+            "Medan",
+            "Bali",
+            "Bandung",
+            "Semarang",
+            "Yogyakarta",
+            "Makassar",
+            "Lombok"
+        ],
+        "img": "/assets/img/home3/destination-dropdown-card-img1.png"
+    },
+    {
+        "id": "5",
+        "tag": "10",
+        "title": "Indonesia",
+        "locations": [
+            "Jakarta",
+            "Surabaya",
+            "Medan",
+            "Bali",
+            "Bandung",
+            "Semarang",
+            "Yogyakarta",
+            "Makassar",
+            "Lombok"
+        ],
+        "img": "/assets/img/home3/destination-dropdown-card-img1.png"
+    },
+    {
+        "id": "6",
+        "tag": "10",
+        "title": "Indonesia",
+        "locations": [
+            "Jakarta",
+            "Surabaya",
+            "Medan",
+            "Bali",
+            "Bandung",
+            "Semarang",
+            "Yogyakarta",
+            "Makassar",
+            "Lombok"
+        ],
+        "img": "/assets/img/home3/destination-dropdown-card-img1.png"
+    }
+]

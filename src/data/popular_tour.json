@@ -1,0 +1,78 @@
+[
+    {
+        "id": "1",
+        "batch": "3 Days / 4 Night",
+        "img": "/assets/img/home1/package-card-img1.png",
+        "location_list": [
+            "Nepal",
+            "Indonesia Tour"
+        ],
+        "title": "A Journey through Historical and Culture.",
+        "price": "8,629",
+        "place_list": [
+            "Mecca",
+            "Medina",
+            "Riyadh",
+            "Doha",
+            "Al Wakrah",
+            "Al Rayyan"
+        ]
+    },
+    {
+        "id": "2",
+        "batch": "6 Days / 7 Night",
+        "img": "/assets/img/home1/package-card-img2.png",
+        "location_list": [
+            "Italy",
+            "France Tour"
+        ],
+        "title": "Exploring then Spiritual and Mystical Travel.",
+        "price": "8,629",
+        "place_list": [
+            "Mecca",
+            "Medina",
+            "Riyadh",
+            "Doha",
+            "Al Wakrah",
+            "Al Rayyan"
+        ]
+    },
+    {
+        "id": "3",
+        "batch": "6 Days / 7 Night",
+        "img": "/assets/img/home1/package-card-img3.png",
+        "location_list": [
+            "Thailand",
+            "Japan Tour"
+        ],
+        "title": "Hiking, Rafting, and Exploring Travels Outdoors.",
+        "price": "8,629",
+        "place_list": [
+            "Mecca",
+            "Medina",
+            "Riyadh",
+            "Doha",
+            "Al Wakrah",
+            "Al Rayyan"
+        ]
+    },
+    {
+        "id": "4",
+        "batch": "6 Days / 7 Night",
+        "img": "/assets/img/home1/package-card-img4.png",
+        "location_list": [
+            "Turkey",
+            "Hungary Tour"
+        ],
+        "title": "Exploring then Spiritual and Mystical Travel.",
+        "price": "8,629",
+        "place_list": [
+            "Mecca",
+            "Medina",
+            "Riyadh",
+            "Doha",
+            "Al Wakrah",
+            "Al Rayyan"
+        ]
+    }
+]
