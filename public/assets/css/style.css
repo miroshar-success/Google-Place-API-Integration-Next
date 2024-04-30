@@ -1,3 +1,7 @@
+/* ./styles/globals.css */
+
+
+
 @font-face {
   font-family: "Rubik";
   src: url(./fonts/Rubik-Black.ttf) format("truetype");
@@ -191,6 +195,7 @@ Version: 1.0
   scroll-behavior: smooth;
 }
 
+
 :root {
   --font-rubik: "Rubik", sans-serif;
   --font-jost: "Jost", sans-serif;
@@ -216,7 +221,9 @@ html {
   font-size: 100%;
   scroll-behavior: smooth;
 }
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
   padding: 0;

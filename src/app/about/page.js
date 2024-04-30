@@ -23,7 +23,6 @@ const page = () => {
       <Home2About />
       <Home2WhyChoose />
       <Home2Activities />
-      <Newslatter />
       <Footer />
     </>
   );

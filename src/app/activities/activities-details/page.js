@@ -389,7 +389,6 @@ const Page = () => {
         })}
       />
      </div>
-     <Newslatter/>
     <Footer/>
     </>
   )

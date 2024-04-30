@@ -16,8 +16,6 @@ const page = () => {
       <Breadcrumb pagename="Itinerary Grid" pagetitle="Itinerary grid" />
       <div className="package-grid-with-sidebar-section pt-120 mb-120">
         <div className="container">
-          <div className="row g-lg-4 gy-5">
-            <div className="col-lg-8">
               <div className="package-inner-title-section mb-40">
                 <p>Showing 1–12 of 101 results</p>
                 <div className="selector-and-grid">
@@ -363,78 +361,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
-            <div className="booking-form-wrap mb-40">
-                <h4>Create your own Itinerary</h4>
-                <p>
-                  Design your dream tarvel itinerary and let other travelers enikoy it with you!
-                </p>
-                <div className="nav nav-pills mb-40" role="tablist">
-                  <button
-                    className="nav-link show active"
-                    id="v-pills-booking-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#v-pills-booking"
-                    type="button"
-                    role="tab"
-                    aria-controls="v-pills-booking"
-                    aria-selected="true" >
-                    Start now
-                  </button>
-                </div>
-                <div className="sidebar-booking-form">
-                    <form>
-                      <div className="form-inner mb-20">
-                        <label>Title <span>*</span></label>
-                        <input type="text" placeholder="Enter the itinerary title" />
-                      </div>
-                      <div className="form-inner mb-20">
-                        <label>Destination <span>*</span></label>
-                        <input type="text" placeholder="change this to Location Integration"/>
-                      </div>
-                      <div className="tour-date-wrap mb-50">
-                        <h6>Select Your start date:</h6>
-                        <div className="form-inner mb-20">
-                          <div className="form-group">
-                            <input type="date" name="inOut" placeholder="5 Jan, 2024" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="tour-date-wrap mb-50">
-                        <h6>Select Your end date:</h6>
-                        <div className="form-inner mb-20">
-                          <div className="form-group">
-                            <input type="date" name="inOut" placeholder="5 Jan, 2024" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="form-inner mb-20">
-                        <label>Activity <span>*</span></label>
-                        <input type="text" placeholder="add activity "/>
-                      </div>
-                      <div className="form-inner mb-20">
-                        <label>Participants <span>*</span></label>
-                        <input type="text" placeholder="change this to add participants with username"/>
-                      </div>
-                      <div className="number-input-item adults">
-                          <label className="number-input-lable">Group Size:<span>
-                            </span></label>
-                          <QuantityCounter incIcon="bx bx-plus" dcrIcon="bx bx-minus" />
-                        </div>
-                      <div className="form-inner mb-30">
-                        <label>Description <span>*</span></label>
-                        <textarea placeholder="Write the itinerary description" defaultValue={""} />
-                      </div>
-                      <div className="form-inner">
-                        <button type="submit" className="primary-btn1 two">Create itinerary</button>
-                      </div>
-                    </form>
-                  </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
       <Footer />
     </>
   );

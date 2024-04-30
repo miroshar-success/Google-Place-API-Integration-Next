@@ -1,7 +1,7 @@
   import { useAuth } from "@/hooks/AuthContext";
   import React from "react";
 
-  const LoginModal = () => {
+  const LoginModal = ({ onClose }) => {
   
     return (
       <>
@@ -14,7 +14,7 @@
         >
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
-              <div className="modal-clode-btn" data-bs-dismiss="modal" />
+              <button onClick={onClose} className="modal-close-btn" data-bs-dismiss="modal" />
               <div className="modal-header">
                 <img src="/assets/img/home1/login-modal-header-img.jpg" alt="" />
               </div>

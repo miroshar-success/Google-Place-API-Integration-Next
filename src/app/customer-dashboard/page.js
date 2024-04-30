@@ -1,5 +1,6 @@
 import Header2 from '@/components/header/Header2';
 import Icon from '@/uitils/Icon';
+import QuantityCounter from '@/uitils/QuantityCounter';
 import Link from 'next/link';
 import React from 'react';
 const page = () => {
@@ -68,136 +69,79 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="counter-single five">
-                <div className="counter-icon">
-                  <Icon name="activities" width={50} height={55} viewBox="0 0 23 23"></Icon>                                
-                </div>
-                <div className="counter-content">
-                  <p>Total Activities</p>
-                  <div className="number">
-                    <h3 className="counter">17</h3>
-                    <span>+</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div className="recent-listing-area">
-          <h6>Your Itinerary Info</h6>
+          <h6>Where next ?</h6>
           <div className="recent-listing-table">
-            <table className="eg-table2">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Category</th>
-                  <th>Status</th>
-                  <th>Timeline</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Name">
-                    <div className="product-name">
-                      <div className="img">
-                        <img src="/assets/img/home1/package-card-img1.png" alt="" />
+            
+            <div className="booking-form-wrap mb-40">
+                <h4>Create your own Itinerary</h4>
+                <p>
+                  Design your dream tarvel itinerary and let other travelers enikoy it with you!
+                </p>
+                <div className="nav nav-pills mb-40" role="tablist">
+                  <button
+                    className="nav-link show active"
+                    id="v-pills-booking-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#v-pills-booking"
+                    type="button"
+                    role="tab"
+                    aria-controls="v-pills-booking"
+                    aria-selected="true" >
+                    Start now
+                  </button>
+                </div>
+                <div className="sidebar-booking-form">
+                    <form>
+                      <div className="form-inner mb-20">
+                        <label>Title <span>*</span></label>
+                        <input type="text" placeholder="Enter the itinerary title" />
                       </div>
-                      <div className="product-content">
-                        <h6><a href="#">Explore Travel NYC's Museums, Diversity,</a></h6>
-                        <p>
-                           <span>New york</span>
-                        </p>
+                      <div className="form-inner mb-20">
+                        <label>Destination <span>*</span></label>
+                        <input type="text" placeholder="change this to Location Integration"/>
                       </div>
-                    </div>
-                  </td>
-                  <td data-label="Category">
-                    itinerary
-                  </td>
-                  <td data-label="Status">
-                    <span className="confirmed">Confirmed</span>
-                  </td>
-                  <td data-label="Timeline">
-                    July 10, 2023 - July 14, 2023
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Name">
-                    <div className="product-name">
-                      <div className="img">
-                        <img src="/assets/img/home1/package-card-img1.png" alt="" />
+                      <div className="tour-date-wrap mb-50">
+                        <h6>Select Your start date:</h6>
+                        <div className="form-inner mb-20">
+                          <div className="form-group">
+                            <input type="date" name="inOut" placeholder="5 Jan, 2024" />
+                          </div>
+                        </div>
                       </div>
-                      <div className="product-content">
-                        <h6><a href="#"> Adult traveleing  With Fan With Insurance.</a></h6>
-                        <p>
-                         <span>New York</span>
-                        </p>
+                      <div className="tour-date-wrap mb-50">
+                        <h6>Select Your end date:</h6>
+                        <div className="form-inner mb-20">
+                          <div className="form-group">
+                            <input type="date" name="inOut" placeholder="5 Jan, 2024" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td data-label="Category">
-                    Itinerary
-                  </td>
-                  <td data-label="Status">
-                    <span className="pending">Pending</span>
-                  </td>
-                  <td data-label="Timeline">
-                    60 Days
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Name">
-                    <div className="product-name">
-                      <div className="img">
-                        <img src="/assets/img/home1/package-card-img1.png" alt="" />
+                      <div className="form-inner mb-20">
+                        <label>Activity <span>*</span></label>
+                        <input type="text" placeholder="add activity "/>
                       </div>
-                      <div className="product-content">
-                        <h6><a href="#">Golden Tulip The Grandmark Dhaka</a></h6>
-                        <p>
-                         <span>Dhaka, Bangladesh</span>
-                        </p>
+                      <div className="form-inner mb-20">
+                        <label>Participants <span>*</span></label>
+                        <input type="text" placeholder="change this to add participants with username"/>
                       </div>
-                    </div>
-                  </td>
-                  <td data-label="Category">
-                    itinerary
-                  </td>
-                  <td data-label="Status">
-                    <span className="rejected">Cancel</span>
-                  </td>
-                  <td data-label="Timeline">
-                    July 10, 2023 - July 14, 2023
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="pagination-area">
-              <ul className="paginations">
-                <li className="page-item active">
-                  <a href="#">1</a>
-                </li>
-                <li className="page-item">
-                  <a href="#">2</a>
-                </li>
-                <li className="page-item">
-                  <a href="#">3</a>
-                </li>
-              </ul>
-              <ul className="paginations-buttons">
-                <li>
-                  <a href="#">
-                  <Icon name="littleArrow" width={7} height={14} viewBox="0 0 7 14"></Icon>
-                    Prev
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Next
-                   <Icon name="littleArrow" width={7} height={14} viewBox="0 0 7 14"></Icon>
-                  </a>
-                </li>
-              </ul>
-            </div>
+                      <div className="number-input-item adults">
+                          <label className="number-input-lable">Group Size:<span>
+                            </span></label>
+                          <QuantityCounter incIcon="bx bx-plus" dcrIcon="bx bx-minus" />
+                        </div>
+                      <div className="form-inner mb-30">
+                        <label>Description <span>*</span></label>
+                        <textarea placeholder="Write the itinerary description" defaultValue={""} />
+                      </div>
+                      <div className="form-inner">
+                        <button type="submit" className="primary-btn1 two">Create itinerary</button>
+                      </div>
+                    </form>
+                  </div>
+              </div>
           </div>
         </div>
       </div>

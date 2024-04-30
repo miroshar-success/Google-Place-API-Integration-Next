@@ -1,6 +1,5 @@
 "use client";
 import React, { useMemo, useState } from "react";
-import ModalVideo from "react-modal-video";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   Autoplay,

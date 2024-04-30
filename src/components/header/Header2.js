@@ -66,6 +66,7 @@ function reducer(state, action) {
 }
 const Header2 = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [isLoginModalOpen, setLoginModalOpen] = useState(false);
   const headerRef = useRef(null);
   const handleScroll = () => {
     const { scrollY } = window;
@@ -75,8 +76,8 @@ const Header2 = () => {
    
   // Check what is actually returned
 
-  const auth = useAuth();
-  console.log("Auth context value in component:",auth);
+  //const auth = useAuth();
+ // console.log("Auth context value in component:",auth);
   //const {openLogin} = useAuth();
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -90,6 +91,11 @@ const Header2 = () => {
 
   const toggleRightSidebar = () => {
     dispatch({ type: "TOGGLE_RIGHTSIDEBAR" });
+  };
+  const toggleLoginModal = () => {
+    console.log("Current modal state:", isLoginModalOpen);
+    setLoginModalOpen(!isLoginModalOpen);
+    console.log("Updated modal state:", !isLoginModalOpen);
   };
   const toggleSubMenu = (subMenu) => {
     dispatch({ type: "TOGGLE_SUB_MENU", subMenu });
@@ -146,7 +152,7 @@ const Header2 = () => {
 
   return (
     <>
-      <LoginModal />
+      {isLoginModalOpen &&< LoginModal onClose={toggleLoginModal} />}
       <header
         ref={headerRef}
         className={`header-area style-2 ${state.scrollY > 10 ? "sticky" : ""}`}
@@ -224,12 +230,12 @@ const Header2 = () => {
             <button
               type="button"
               className="modal-btn header-cart-btn"
-              data-bs-toggle="modal"
-              data-bs-target="#user-login"
+              
             >
               REGISTER/ LOGIN
             </button>
           </div>
+
         </div>
         <div className="nav-right d-flex jsutify-content-end align-items-center">
           <ul className="icon-list">
@@ -242,7 +248,8 @@ const Header2 = () => {
                 <Icon name="sideBarToggle" width={25} height={25} viewBox="0 0 25 25"/>
             </li>
           </ul>
-          <button  href="/login" className="primary-btn3 d-xl-flex d-none" >
+          <button className="primary-btn3 d-xl-flex d-none" data-bs-toggle="modal"
+              data-bs-target="#user-login" onClick={toggleLoginModal}>
                 SignIn / Register
           </button>
           <div

@@ -1,10 +1,9 @@
 
-
-import SignUpModal from "@/components/common/SignupModel";
+import Messenger from "@/components/Messaging/Messenger";
+import Sidebar from "@/components/Messaging/Sidebar";
 import Footer from "@/components/footer/Footer";
-import Header2 from "@/components/header/Header2";
 
-import React from "react";
+import Header2 from "@/components/header/Header2";
 export const metadata = {
   title: "Adventurist's Link ",
   description:
@@ -16,8 +15,7 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <Header2 />
-      <SignUpModal/>
+      <Messenger/>
       <Footer />
     </>
   );
