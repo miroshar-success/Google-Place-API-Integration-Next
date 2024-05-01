@@ -1,12 +1,12 @@
-  import { useAuth } from "@/hooks/AuthContext";
-  import React from "react";
+import { AuthContext } from "@/hooks/AuthContext";
+  import React, { useContext } from "react";
 
-  const LoginModal = ({ onClose }) => {
-  
+  const LoginModal = () => {
+    const { showModal, toggleLoginModal } = useContext(AuthContext);
     return (
       <>
         <div
-          className="modal login-modal"
+          className="modal login-modal block opacity-100"
           id="user-login"
           data-bs-keyboard="false"
           tabIndex={-1}
@@ -14,9 +14,9 @@
         >
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
-              <button onClick={onClose} className="modal-close-btn" data-bs-dismiss="modal" />
-              <div className="modal-header">
+              <div className="modal-header relative">
                 <img src="/assets/img/home1/login-modal-header-img.jpg" alt="" />
+                <span className="absolute top-[10px] right-[10px] w-[20px] h-[20px] bg-white rounded-full text-black flex justify-center items-center text-[20px] cursor-pointer" onClick={toggleLoginModal}>&times;</span>
               </div>
               <div className="modal-body">
                 <div className="login-registration-form">
