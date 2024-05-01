@@ -58,12 +58,6 @@ const page = () => {
                 </button>
               </li>
               <li className="nav-item" role="presentation">
-                <button className="nav-link" id="preference-tab" data-bs-toggle="pill" data-bs-target="#preference" type="button" role="tab" aria-controls="preference" aria-selected="false" tabIndex={-1}>
-                <Icon name="littleSettings" width={14} height={14} viewBox="0 0 14 14"></Icon>
-                  Preference
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
                 <button className="nav-link" id="change-pass-tab" data-bs-toggle="pill" data-bs-target="#change-pass" type="button" role="tab" aria-controls="change-pass" aria-selected="false" tabIndex={-1}>
                 <Icon name="security" width={14} height={14} viewBox="0 0 14 14"></Icon>
                   Change Password
@@ -81,20 +75,14 @@ const page = () => {
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-inner mb-30">
-                        <label>First Name*</label>
+                        <label>User name*</label>
                         <input type="text" placeholder="Ex- Rocky " />
                       </div>
                     </div>
                     <div className="col-md-6">
                       <div className="form-inner mb-30">
-                        <label>Last Name*</label>
+                        <label>Bio*</label>
                         <input type="text" placeholder="Jhon" />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-inner mb-30">
-                        <label>Email Address*</label>
-                        <input type="email" placeholder="example@gmail.com" />
                       </div>
                     </div>
                     <div className="col-md-6">
@@ -104,15 +92,25 @@ const page = () => {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="form-inner mb-30">
-                        <label>Your Address*</label>
-                        <input type="text" placeholder="Mirpur DOHS, Dhaka" />
+                    <div className="tour-date-wrap mb-50">
+                        <h6> Your Birth date:</h6>
+                        <div className="form-inner mb-20">
+                          <div className="form-group">
+                            <input type="date" name="inOut" placeholder="5 Jan, 2024" />
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div className="col-md-6 mb-30">
                       <div className="form-inner">
+                      <label>Gender*</label>
+                        <SelectComponent options={['Male','Female',]} placeholder="Gender" />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-inner">
                       <label>Country*</label>
-                        <SelectComponent options={['United Kingdom','Bangladesh','United State']} placeholder="Country" />
+                        <SelectComponent options={['Austria','Australia','Bolivia', 'Hunhgary' , ]} placeholder="Country" />
                       </div>
                     </div>
                   </div>
@@ -139,48 +137,6 @@ const page = () => {
                     <button type="submit" className="primary-btn3">Update Profile</button>
                   </div>
                 </form>
-              </div>
-            </div>
-            <div className="tab-pane fade" id="preference" role="tabpanel" aria-labelledby="preference-tab">
-              <div className="dashboard-profile-tab-content">
-                <ul className="preference-list">
-                  <li>
-                    <div className="preference-list-content">
-                      <h6>Email Notification</h6>
-                      <p>To set up email notifications, you typically need two components: a server-side application or script to generate and send the emails.</p>
-                    </div>
-                    <div className="form-check form-switch">
-                      <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
-                    </div>
-                  </li>
-                  <li>
-                    <div className="preference-list-content">
-                      <h6>Newsletter</h6>
-                      <p>Choose an email service provider that supports sending newsletters. Popular choices include Mailchimp, Sendinblue, Campaign Monitor, and others.</p>
-                    </div>
-                    <div className="form-check form-switch">
-                      <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault2" />
-                    </div>
-                  </li>
-                  <li>
-                    <div className="preference-list-content">
-                      <h6>Automated Reports</h6>
-                      <p>To set up email notifications, you typically need two components: a server-side application or script to generate and send the emails.</p>
-                    </div>
-                    <div className="form-check form-switch">
-                      <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault3" />
-                    </div>
-                  </li>
-                </ul>
-                <div className="currency-and-unit">
-                  <div className="row g-lg-4 gy-3">
-                    <div className="col-md-6">
-                      <div className="form-inner">
-                       <SelectComponent options={['Sq.ft','Cm']} placeholder="Area Unit" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             <div className="tab-pane fade" id="change-pass" role="tabpanel" aria-labelledby="change-pass-tab">
