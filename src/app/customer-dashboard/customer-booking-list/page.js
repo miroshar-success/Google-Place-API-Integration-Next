@@ -41,27 +41,27 @@ const page = () => {
   <div className="main-content">
     <div className="row">
       <div className="col-xl-12 mb-30">
-        <div className="page-title">
-          <h4>Your History:</h4>
-          <div className="booking-options">
-            <ul className="nav nav-pills" id="pills-tab2" role="tablist">
-              <li className="nav-item" role="presentation">
-                <button className="nav-link active" id="tour-tab" data-bs-toggle="pill" data-bs-target="#tour" type="button" role="tab" aria-controls="tour" aria-selected="true">
-                 <Icon name="itinerary" width={23} height={23} viewBox="0 0 23 23"></Icon>
-                  Itinerary
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
+        
       </div>
       <div className="col-lg-12">
         <div className="tab-content" id="pills-tab2Content">
           <div className="tab-pane fade show active" id="tour" role="tabpanel" aria-labelledby="tour-tab">
             <div className="recent-listing-area">
               <div className="title-and-tab">
-                <h6>Your Itineraries Info</h6>
-                <ul className="nav nav-tabs" id="myTab" role="tablist">
+                <div className="page-title">
+                  <h4>Your History:</h4>
+                   <div className="booking-options">
+                      <ul className="nav nav-pills" id="pills-tab2" role="tablist">
+                        <li className="nav-item" role="presentation">
+                          <button className="nav-link active" id="tour-tab" data-bs-toggle="pill" data-bs-target="#tour" type="button" role="tab" aria-controls="tour" aria-selected="true">
+                           <Icon name="itinerary" width={23} height={23} viewBox="0 0 23 23"></Icon>
+                             Itinerary
+                          </button>
+                        </li>
+                     </ul>
+                   </div>
+                 </div>
+              <ul className="nav nav-tabs" id="myTab" role="tablist">
                   <li className="nav-item" role="presentation">
                     <button className="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
                   </li>
@@ -76,7 +76,7 @@ const page = () => {
                     <table className="eg-table2">
                       <thead>
                         <tr>
-                          <th>Tour Package</th>
+                          <th>Itinerary name</th>
                           <th>Type</th>
                           <th>Participants</th>
                           <th>Status</th>

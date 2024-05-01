@@ -43,11 +43,6 @@ const page = () => {
   <div className="main-content">
     <div className="row">
       <div className="col-xl-12">
-        <div className="main-content-title-profile mb-50">
-          <div className="main-content-title">
-            <h3>Personal Information</h3>
-          </div>
-        </div>
         <div className="dashboard-profile-wrapper">
           <div className="dashboard-profile-nav">
             <ul className="nav flex-column nav-pills" id="pills-tab" role="tablist">

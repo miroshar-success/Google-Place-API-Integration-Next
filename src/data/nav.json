@@ -114,7 +114,7 @@
             },
             {
                 "id": "11",
-                "label": "signup",
+                "label": "TestMessage",
                 "link": "/Messenger"
             }
         ]
