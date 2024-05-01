@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import navData from "../../data/nav.json";
-import { useEffect, useMemo, useReducer, useRef , useState} from "react";
+import { useContext, useEffect, useMemo, useReducer, useRef , useState} from "react";
 import LoginModal from "../common/LoginModal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
@@ -11,7 +11,7 @@ import SwiperCore, {
   Pagination,
 } from "swiper";
 import Icon from "@/uitils/Icon";
-import { useAuth } from "@/hooks/AuthContext";
+import { AuthContext } from "@/hooks/AuthContext";
 SwiperCore.use([Autoplay, EffectFade, Navigation, Pagination]);
 
 const initialState = {
@@ -66,19 +66,12 @@ function reducer(state, action) {
 }
 const Header2 = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+  const { showModal, toggleLoginModal } = useContext(AuthContext);
   const headerRef = useRef(null);
   const handleScroll = () => {
     const { scrollY } = window;
     dispatch({ type: "setScrollY", payload: scrollY });
   };
-  // Inside Header2 component
-   
-  // Check what is actually returned
-
-  //const auth = useAuth();
- // console.log("Auth context value in component:",auth);
-  //const {openLogin} = useAuth();
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -91,11 +84,6 @@ const Header2 = () => {
 
   const toggleRightSidebar = () => {
     dispatch({ type: "TOGGLE_RIGHTSIDEBAR" });
-  };
-  const toggleLoginModal = () => {
-    console.log("Current modal state:", isLoginModalOpen);
-    setLoginModalOpen(!isLoginModalOpen);
-    console.log("Updated modal state:", !isLoginModalOpen);
   };
   const toggleSubMenu = (subMenu) => {
     dispatch({ type: "TOGGLE_SUB_MENU", subMenu });
@@ -152,7 +140,6 @@ const Header2 = () => {
 
   return (
     <>
-      {isLoginModalOpen &&< LoginModal onClose={toggleLoginModal} />}
       <header
         ref={headerRef}
         className={`header-area style-2 ${state.scrollY > 10 ? "sticky" : ""}`}
@@ -192,9 +179,9 @@ const Header2 = () => {
                 return (
                   <li
                     key={data.id} className={`${data.subMenu && data.subMenu.length > 0 ? "menu-item-has-children" : ""}`}>
-                    
+
                     {
-                      data.id === "11" ? (  
+                      data.id === "11" ? (
                       <a href="#"
                           className="modal-btn"
                           data-bs-toggle="modal"
@@ -207,7 +194,7 @@ const Header2 = () => {
                       <a>{data.label}</a>
                     </Link>
                 )}
-                    
+
                     {data.icon && data.subMenu && data.subMenu.length > 0 && (
                    <>
                       <i onClick={() => toggleMenu(data.label)} className={`bi bi-${state.activeMenu === data.label ? "dash" : "plus"} dropdown-icon`} />
@@ -230,7 +217,7 @@ const Header2 = () => {
             <button
               type="button"
               className="modal-btn header-cart-btn"
-              
+
             >
               REGISTER/ LOGIN
             </button>
@@ -259,6 +246,7 @@ const Header2 = () => {
           </div>
         </div>
       </header>
+      {showModal && <LoginModal />}
       <div
         className={`right-sidebar-menu ${
           state.isRightSidebar ? "show-right-menu" : ""

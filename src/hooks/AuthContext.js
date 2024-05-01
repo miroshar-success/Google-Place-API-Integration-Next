@@ -1,27 +1,20 @@
-"use client";
-import React , {Children, createContext , useContext , useState} from "react";
+"use client"
+import React, { createContext, useState } from 'react';
 
-const AuthContext = createContext({
-   modal: null,
-   openLogin: () => {},
-   openSignUp: () => {},
-   closeModal: () => {}
-});
+const AuthContext = createContext();
 
-export const useAuth = ()=> useContext(AuthContext);
+const AuthProvider = ({ children }) => {
+  const [showModal, setShowModal] = useState(false);
 
-export const AuthProvider = ({children})=>{
-   const [modal , setModal] = useState(null);
+  const toggleLoginModal = () => {
+    setShowModal(!showModal);
+  };
 
-   const openLogin = ()=> { setModal('login');}
-   const openSignUp = ()=> setModal('signup');
-   const closeModal = ()=>setModal(null);
-
-   console.log("Inside AuthProvider: Modal value is", modal);
-
-   return(
-     <AuthContext.Provider  value={{modal , openLogin , openSignUp , closeModal}}>
-        {children}
-     </AuthContext.Provider>
-   );
+  return (
+    <AuthContext.Provider value={{ showModal, toggleLoginModal }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
+
+export { AuthContext, AuthProvider };

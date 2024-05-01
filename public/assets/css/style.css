@@ -1,6 +1,7 @@
 /* ./styles/globals.css */
-
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: "Rubik";
@@ -103,7 +104,7 @@ Author: Egens Lab --> (https://www.egenslab.com/)
 Support: https://egenslab.desky.support/
 Version: 1.0
 
-1.COMMON CSS 
+1.COMMON CSS
 2. Mixins Css
 3. Global Css
 4. Topbar
@@ -187,7 +188,7 @@ Version: 1.0
 82 . Package Grid With Sidebar Page
 ===========================*/
 /*===========================
-     01.COMMON CSS 
+     01.COMMON CSS
 ===========================*/
 * {
   margin: 0;
@@ -221,9 +222,6 @@ html {
   font-size: 100%;
   scroll-behavior: smooth;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 body {
   margin: 0;
   padding: 0;
@@ -14921,7 +14919,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .destination-dropdown-section {
-  
+
   background-size: cover;
   background-repeat: no-repeat;
   padding: 110px 14%;
@@ -15950,7 +15948,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   letter-spacing: 0.26px;
 }
 .testimonial-card2.style-2 {
- 
+
   border-radius: 20px;
 }
 .testimonial-card2.style-2 h4 {
@@ -15970,7 +15968,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 
 .home3-testimonial-section {
-  
+
   background-size: cover;
   background-repeat: no-repeat;
   padding: 120px 40px;

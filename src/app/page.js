@@ -13,7 +13,6 @@ import { AuthProvider } from "@/hooks/AuthContext";
 export default function Home() {
   return (
     <AuthProvider>
-    <>
      <Header2 />
       <Home2Banner />
       <Home2ThrillingTour />
@@ -22,7 +21,6 @@ export default function Home() {
       <Home2Testimonial />
       <Newslatter />
       <Footer />
-    </>
     </AuthProvider>
   );
 }
