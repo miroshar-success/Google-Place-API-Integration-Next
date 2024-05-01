@@ -6,7 +6,7 @@ import "../../public/assets/css/fontawesome.min.css";
 import "../../public/assets/css/swiper-bundle.min.css";
 import "../../public/assets/css/nice-select.css";
 import "../../public/assets/css/slick-theme.css";
- 
+
 import "../../public/assets/css/slick.css";
 import "../../public/assets/css/bootstrap-datetimepicker.min.css";
 import "../../public/assets/css/bootstrap.min.css";
@@ -20,10 +20,14 @@ import dynamic from 'next/dynamic'
 
 
 export default function RootLayout({ children }) {
-  
+
   return (
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+        </body>
       </html>
   );
 }

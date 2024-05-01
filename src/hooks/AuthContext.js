@@ -1,17 +1,22 @@
 "use client"
 import React, { createContext, useState } from 'react';
 
-const AuthContext = createContext();
+const AuthContext = createContext({});
 
 const AuthProvider = ({ children }) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
 
   const toggleLoginModal = () => {
-    setShowModal(!showModal);
+   setShowLoginModal(!showLoginModal);
   };
 
+  const toggleSignUpModal = () => {
+   setShowSignUpModal(!showSignUpModal);
+ };
+
   return (
-    <AuthContext.Provider value={{ showModal, toggleLoginModal }}>
+    <AuthContext.Provider value={{ showLoginModal, showSignUpModal, toggleLoginModal, toggleSignUpModal }}>
       {children}
     </AuthContext.Provider>
   );

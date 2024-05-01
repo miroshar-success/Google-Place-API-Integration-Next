@@ -2,7 +2,6 @@
 import Link from "next/link";
 import navData from "../../data/nav.json";
 import { useContext, useEffect, useMemo, useReducer, useRef , useState} from "react";
-import LoginModal from "../common/LoginModal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   Autoplay,
@@ -12,6 +11,8 @@ import SwiperCore, {
 } from "swiper";
 import Icon from "@/uitils/Icon";
 import { AuthContext } from "@/hooks/AuthContext";
+import LoginModal from "../common/LoginModal";
+import SignUpModal from "../common/SignupModel";
 SwiperCore.use([Autoplay, EffectFade, Navigation, Pagination]);
 
 const initialState = {
@@ -66,7 +67,8 @@ function reducer(state, action) {
 }
 const Header2 = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { showModal, toggleLoginModal } = useContext(AuthContext);
+  const { showLoginModal, showSignUpModal, toggleLoginModal, toggleSignUpModal } = useContext(AuthContext);
+  console.log("showLoginModal: " + showLoginModal);
   const headerRef = useRef(null);
   const handleScroll = () => {
     const { scrollY } = window;
@@ -246,7 +248,8 @@ const Header2 = () => {
           </div>
         </div>
       </header>
-      {showModal && <LoginModal />}
+      {showLoginModal && <LoginModal />}
+      {showSignUpModal && <SignUpModal />}
       <div
         className={`right-sidebar-menu ${
           state.isRightSidebar ? "show-right-menu" : ""
