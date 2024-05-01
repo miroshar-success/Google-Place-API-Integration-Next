@@ -1,11 +1,16 @@
-import { useAuth } from "@/hooks/AuthContext";
-import React from "react";
+import { AuthContext } from "@/hooks/AuthContext";
+import React, { useContext } from "react";
 
 const SignUpModal = () => {
+  const { toggleLoginModal, toggleSignUpModal } = useContext(AuthContext);
+  const login_modal_show = () => {
+    toggleLoginModal();
+    toggleSignUpModal();
+  }
   return (
     <>
       <div
-        className="modal signup-modal"
+        className="modal signup-modal block opacity-100"
         id="user-signup"
         data-bs-keyboard="false"
         tabIndex={-1}
@@ -45,7 +50,7 @@ const SignUpModal = () => {
                   <div>
                     <button type="button" className="login-btn mb-25">Sign Up</button>
                   </div>
-                  <a href='#'  data-bs-toggle="modal" data-bs-target="#user-login" className="login-link">
+                  <a href='#'  data-bs-toggle="modal" data-bs-target="#user-login" className="login-link" onClick={login_modal_show}>
                     Already have an account? Sign in
                   </a>
                 </form>

@@ -1,4 +1,3 @@
-
 import Home2Activities from "@/components/activities/Home2Activities";
 import Home2Banner from "@/components/banner/Home2Banner";
 import Newslatter from "@/components/common/Newslatter";
@@ -9,11 +8,10 @@ import Home2ThrillingTour from "@/components/tourPackage/Home2ThrillingTour";
 import Home2WhyChoose from "@/components/whyChoose/Home2WhyChoose";
 import { AuthProvider } from "@/hooks/AuthContext";
 
-
 export default function Home() {
   return (
-    <AuthProvider>
-     <Header2 />
+    <>
+      <Header2 />
       <Home2Banner />
       <Home2ThrillingTour />
       <Home2WhyChoose />
@@ -21,6 +19,6 @@ export default function Home() {
       <Home2Testimonial />
       <Newslatter />
       <Footer />
-    </AuthProvider>
+    </>
   );
 }
