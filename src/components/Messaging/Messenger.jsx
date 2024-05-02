@@ -4,7 +4,7 @@ import MessageContainer from './MessageContainer'
 
 const Messenger = () => {
   return (
-    <div className='flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-slate-600 bg-clip-padding'>
+    <div className='flex rounded-lg overflow-hidden bg-slate-600'>
       <Sidebar/>
       <MessageContainer/>
     </div>
