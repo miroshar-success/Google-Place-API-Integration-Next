@@ -1,7 +1,4 @@
 /* ./styles/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @font-face {
   font-family: "Rubik";
@@ -1711,6 +1708,7 @@ ul {
   margin-bottom: 5px; /* Adds some space below each link */
   text-decoration: none;
   margin: 0 39px;
+  cursor: pointer;
 }
 .login-link:hover {
   text-decoration: underline; /* Underline on hover for better user interaction */
@@ -28988,3 +28986,28 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 .tour-facilites-section .nav-tabs .nav-item .nav-link.active svg {
   fill: var(--primary-color1);
 }/*# sourceMappingURL=style.css.map */
+
+.modal.login-modal,
+.modal.signup-modal
+{
+  display: block !important;
+  opacity: 1 !important;
+}
+.modal .modal-header {
+  position: relative;
+}
+.modal-close-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}

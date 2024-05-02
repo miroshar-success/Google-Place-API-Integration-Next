@@ -1,10 +1,10 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import MessageContainer from './MessageContainer'
-
+import "../../../public/assets/css/custom_css.css";
 const Messenger = () => {
   return (
-    <div className='flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-slate-600 bg-clip-padding'>
+    <div className='flex rounded-lg overflow-hidden bg-slate-600'>
       <Sidebar/>
       <MessageContainer/>
     </div>

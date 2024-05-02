@@ -11,6 +11,7 @@ import Footer from "@/components/footer/Footer";
 import Newslatter from "@/components/common/Newslatter";
 import Header2 from "@/components/header/Header2";
 import Icon from "@/uitils/Icon";
+import SearchForm from "@/components/GoogleSearchForm/searchForm";
 const Page = () => {
   const [isOpenModalVideo, setOpenModalVideo] = useState(false);
   const [isOpenimg, setOpenimg] = useState({
@@ -327,8 +328,7 @@ const Page = () => {
                         <input type="text" placeholder="Enter the activity name or title" />
                       </div>
                       <div className="form-inner mb-20">
-                        <label>Location <span>*</span></label>
-                        <input type="email" placeholder="change this to Location Integration"/>
+                        <SearchForm label={"Location"} />
                       </div>
                       <div className="tour-date-wrap mb-50">
                         <h6>Select Your start date:</h6>
