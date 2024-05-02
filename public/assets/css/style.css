@@ -29011,3 +29011,20 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   font-size: 20px;
   cursor: pointer;
 }
+
+.selected-place-remove {
+  padding: 3px;
+  background-color: red;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.select-places-li {
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.selected-places {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
