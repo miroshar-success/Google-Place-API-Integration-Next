@@ -101,7 +101,7 @@ const page = () => {
                         <input type="text" placeholder="Enter the itinerary title" />
                       </div>
                       <div className="form-inner mb-20">
-                        <SearchForm />
+                        <SearchForm label={"destination"} />
                       </div>
                       <div className="tour-date-wrap mb-50">
                         <h6>Select Your start date:</h6>
