@@ -10,7 +10,7 @@ const SignUpModal = () => {
   return (
     <>
       <div
-        className="modal signup-modal block opacity-100"
+        className="modal signup-modal"
         id="user-signup"
         data-bs-keyboard="false"
         tabIndex={-1}

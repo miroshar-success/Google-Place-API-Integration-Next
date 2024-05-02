@@ -10,7 +10,7 @@ const LoginModal = () => {
   return (
     <>
       <div
-        className="modal login-modal block opacity-100"
+        className="modal login-modal"
         id="user-login"
         data-bs-keyboard="false"
         tabIndex={-1}
@@ -21,7 +21,7 @@ const LoginModal = () => {
             <div className="modal-header relative">
               <img src="/assets/img/home1/login-modal-header-img.jpg" alt="" />
               <span
-                className="absolute top-[10px] right-[10px] w-[20px] h-[20px] bg-white rounded-full text-black flex justify-center items-center text-[20px] cursor-pointer"
+                className="modal-close-box"
                 onClick={toggleLoginModal}
               >
                 &times;
@@ -58,7 +58,7 @@ const LoginModal = () => {
                       Login
                     </button>
                   </div>
-                  <a className="login-link cursor-pointer" onClick={register_modal_show}>
+                  <a className="login-link" onClick={register_modal_show}>
                     {"Don't"} have an account?
                   </a>
                   <a href="/register" className="login-link">
