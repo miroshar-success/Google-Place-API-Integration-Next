@@ -7,9 +7,10 @@ const scriptOptions = {
   libraries: ["places"],
 };
 
-export default function SearchForm({ action }) {
+export default function MultiSelectAutocomplete({ label }) {
   const { isLoaded, loadError } = useLoadScript(scriptOptions);
   const [autocomplete, setAutocomplete] = useState(null);
+  const [selectedPlaces, setSelectedPlaces] = useState([]);
   const autocompleteRef = useRef(null);
   const inputEl = useRef(null);
 
@@ -19,16 +20,7 @@ export default function SearchForm({ action }) {
     }
   }, [isLoaded]);
 
-  // Handle the keypress for input
-  const onKeypress = (e) => {
-    // On enter pressed
-    if (e.key === "Enter") {
-      e.preventDefault();
-      return false;
-    }
-  };
-
-  const onPlaceChanged = (e) => {
+  const onPlaceChanged = () => {
     if (autocomplete) {
       const place = autocomplete.getPlace();
       if (place && place.geometry && place.geometry.location) {
@@ -41,9 +33,15 @@ export default function SearchForm({ action }) {
           placeId: place.place_id,
           address: place.formatted_address,
         };
-        console.log(selectedPlace);
+        setSelectedPlaces([...selectedPlaces, selectedPlace]);
+        inputEl.current.value = ""; // Clear input after selection
       }
     }
+  };
+
+  const removePlace = (placeId) => {
+    const updatedPlaces = selectedPlaces.filter((place) => place.placeId !== placeId);
+    setSelectedPlaces(updatedPlaces);
   };
 
   return (
@@ -55,7 +53,7 @@ export default function SearchForm({ action }) {
       {isLoaded && (
         <React.Fragment>
           <label>
-            Destination <span>*</span>
+            {label} <span>*</span>
           </label>
           <Autocomplete
             onLoad={(autocomplete) => {
@@ -69,10 +67,20 @@ export default function SearchForm({ action }) {
               ref={inputEl}
               type="text"
               className="form-input"
-              onKeyPress={onKeypress}
-              placeholder="Change this to Location Integration"
+              placeholder="Search for places"
             />
           </Autocomplete>
+          <div className="selected-places">
+            Selected Places:
+            <ul>
+              {selectedPlaces.map((place) => (
+                <li key={place.placeId} className="select-places-li">
+                  {place.name} ({place.address}){" "}
+                  <button onClick={() => removePlace(place.placeId)} className="selected-place-remove">X</button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </React.Fragment>
       )}
     </>
