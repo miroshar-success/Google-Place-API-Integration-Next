@@ -68,7 +68,6 @@ function reducer(state, action) {
 const Header2 = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { showLoginModal, showSignUpModal, toggleLoginModal, toggleSignUpModal } = useContext(AuthContext);
-  console.log("showLoginModal: " + showLoginModal);
   const headerRef = useRef(null);
   const handleScroll = () => {
     const { scrollY } = window;

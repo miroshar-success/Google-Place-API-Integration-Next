@@ -1,3 +1,4 @@
+import SearchForm from '@/components/GoogleSearchForm/searchForm';
 import Header2 from '@/components/header/Header2';
 import Icon from '@/uitils/Icon';
 import QuantityCounter from '@/uitils/QuantityCounter';
@@ -74,7 +75,7 @@ const page = () => {
         <div className="recent-listing-area">
           <h6>Where next ?</h6>
           <div className="recent-listing-table">
-            
+
             <div className="booking-form-wrap mb-40">
                 <h4>Create your own Itinerary</h4>
                 <p>
@@ -100,8 +101,7 @@ const page = () => {
                         <input type="text" placeholder="Enter the itinerary title" />
                       </div>
                       <div className="form-inner mb-20">
-                        <label>Destination <span>*</span></label>
-                        <input type="text" placeholder="change this to Location Integration"/>
+                        <SearchForm />
                       </div>
                       <div className="tour-date-wrap mb-50">
                         <h6>Select Your start date:</h6>
