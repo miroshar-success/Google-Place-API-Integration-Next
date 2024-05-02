@@ -28988,7 +28988,8 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }/*# sourceMappingURL=style.css.map */
 
 .modal.login-modal,
-.modal.signup-modal
+.modal.signup-modal,
+.modal.notification-modal
 {
   display: block !important;
   opacity: 1 !important;
@@ -29027,4 +29028,58 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 .selected-places {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.message-notification {
+  display: flex;
+  align-items: center;
+}
+
+.message-icon,
+.notification-icon
+{
+  position: relative;
+  cursor: pointer;
+}
+
+.message-notification .icon {
+  margin-right: 15px;
+  font-size: 24px;
+  color: #333; /* Icon color */
+}
+
+.message-notification .badge {
+  position: absolute;
+  top: -5px; /* Adjust top position as needed */
+  right: -9px; /* Adjust right position as needed */
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-size: 9px;
+}
+
+.message-notification i {
+  color: #63ab45;
+}
+.notification-item {
+  background-color: gray;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border: 2px solid gray;
+}
+
+.notification-item.markAsRead {
+  background-color: #fff;
+}
+
+.notification-item .type {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.notification-item .timestamp {
+  display: flex;
+  justify-content: end;
 }

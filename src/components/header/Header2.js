@@ -1,7 +1,14 @@
 "use client";
 import Link from "next/link";
 import navData from "../../data/nav.json";
-import { useContext, useEffect, useMemo, useReducer, useRef , useState} from "react";
+import {
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   Autoplay,
@@ -13,6 +20,7 @@ import Icon from "@/uitils/Icon";
 import { AuthContext } from "@/hooks/AuthContext";
 import LoginModal from "../common/LoginModal";
 import SignUpModal from "../common/SignupModel";
+import NotificationModal from "../common/NotificationModal";
 SwiperCore.use([Autoplay, EffectFade, Navigation, Pagination]);
 
 const initialState = {
@@ -67,7 +75,14 @@ function reducer(state, action) {
 }
 const Header2 = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { showLoginModal, showSignUpModal, toggleLoginModal, toggleSignUpModal } = useContext(AuthContext);
+  const {
+    showLoginModal,
+    showSignUpModal,
+    showNotificationModal,
+    toggleLoginModal,
+    toggleSignUpModal,
+    toggleNotificationModal,
+  } = useContext(AuthContext);
   const headerRef = useRef(null);
   const handleScroll = () => {
     const { scrollY } = window;
@@ -153,15 +168,19 @@ const Header2 = () => {
               src="/assets/img/logoAdv.svg"
             />
           </Link>
-          <span className="app-name" style={{
-             fontFamily: 'Montserrat, sans-serif',
-             fontSize: '1rem',
-             fontWeight: '600',
-              color: '#2a2a2a',
-             marginLeft: '10px',
-             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)'
-         }}>Adventurist's Link</span>
-
+          <span
+            className="app-name"
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "1rem",
+              fontWeight: "600",
+              color: "#2a2a2a",
+              marginLeft: "10px",
+              textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            Adventurist's Link
+          </span>
         </div>
         <div className={`main-menu ${state.isSidebarOpen ? "show-menu" : ""}`}>
           <div className="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
@@ -176,79 +195,119 @@ const Header2 = () => {
           </div>
           <ul className="menu-list">
             {navData.map((data) => {
-
-                return (
-                  <li
-                    key={data.id} className={`${data.subMenu && data.subMenu.length > 0 ? "menu-item-has-children" : ""}`}>
-
-                    {
-                      data.id === "11" ? (
-                      <a href="#"
-                          className="modal-btn"
-                          data-bs-toggle="modal"
-                          data-bs-target="#user-login"
-                      >
-                          {data.label}
-                      </a>
+              return (
+                <li
+                  key={data.id}
+                  className={`${
+                    data.subMenu && data.subMenu.length > 0
+                      ? "menu-item-has-children"
+                      : ""
+                  }`}
+                >
+                  {data.id === "11" ? (
+                    <a
+                      href="#"
+                      className="modal-btn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#user-login"
+                    >
+                      {data.label}
+                    </a>
                   ) : (
                     <Link href={data.link} legacyBehavior>
                       <a>{data.label}</a>
                     </Link>
-                )}
+                  )}
 
-                    {data.icon && data.subMenu && data.subMenu.length > 0 && (
-                   <>
-                      <i onClick={() => toggleMenu(data.label)} className={`bi bi-${state.activeMenu === data.label ? "dash" : "plus"} dropdown-icon`} />
-                      <ul className={`sub-menu ${state.activeMenu === data.label ? "d-block" : ""}`}>
-                         {data.subMenu.map((subItem, subIndex) => (
-                        <li key={subIndex}>
-                        <Link href={subItem.link} legacyBehavior>
-                          <a>{subItem.label}</a>
-                        </Link>
-                        </li>
-                       ))}
+                  {data.icon && data.subMenu && data.subMenu.length > 0 && (
+                    <>
+                      <i
+                        onClick={() => toggleMenu(data.label)}
+                        className={`bi bi-${
+                          state.activeMenu === data.label ? "dash" : "plus"
+                        } dropdown-icon`}
+                      />
+                      <ul
+                        className={`sub-menu ${
+                          state.activeMenu === data.label ? "d-block" : ""
+                        }`}
+                      >
+                        {data.subMenu.map((subItem, subIndex) => (
+                          <li key={subIndex}>
+                            <Link href={subItem.link} legacyBehavior>
+                              <a>{subItem.label}</a>
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
-                   </>
-                    )}
-                  </li>
-                );
+                    </>
+                  )}
+                </li>
+              );
             })}
           </ul>
           <div className="topbar-right d-lg-none d-block">
-            <button
-              type="button"
-              className="modal-btn header-cart-btn"
-
-            >
+            <button type="button" className="modal-btn header-cart-btn">
               REGISTER/ LOGIN
             </button>
           </div>
-
         </div>
         <div className="nav-right d-flex jsutify-content-end align-items-center">
           <ul className="icon-list">
             <li className="d-lg-flex d-none">
-              <Link href="/customer-dashboard" >
-                  <Icon name="profile" width={27} height={27} viewBox="0 0 27 27"></Icon>
+              <Link href="/customer-dashboard">
+                <Icon
+                  name="profile"
+                  width={27}
+                  height={27}
+                  viewBox="0 0 27 27"
+                ></Icon>
               </Link>
             </li>
             <li className="right-sidebar-button" onClick={toggleRightSidebar}>
-                <Icon name="sideBarToggle" width={25} height={25} viewBox="0 0 25 25"/>
+              <Icon
+                name="sideBarToggle"
+                width={25}
+                height={25}
+                viewBox="0 0 25 25"
+              />
             </li>
           </ul>
-          <button className="primary-btn3 d-xl-flex d-none" data-bs-toggle="modal"
-              data-bs-target="#user-login" onClick={toggleLoginModal}>
-                SignIn / Register
+          <button
+            className="signin-register primary-btn3 d-xl-flex d-none"
+            data-bs-toggle="modal"
+            data-bs-target="#user-login"
+            onClick={toggleLoginModal}
+          >
+            SignIn / Register
           </button>
+          {/* If user logged in, message-notification should be displayed. current display:none */}
+          <div className="message-notification">
+            <a className="icon message-icon" href="/Messenger">
+              <i className="fas fa-envelope"></i>{" "}
+              <span className="badge">5</span>
+            </a>
+            <a className="icon notification-icon" onClick={toggleNotificationModal}>
+              <i className="fas fa-bell"></i>{" "}
+              <span className="badge">3</span>
+            </a>
+          </div>
           <div
             className="sidebar-button mobile-menu-btn"
-            onClick={toggleSidebar}>
-           <Icon name = "sideBarToggle" width={25} height={25} viewBox="0 0 25 25"></Icon>
+            onClick={toggleSidebar}
+          >
+            <Icon
+              name="sideBarToggle"
+              width={25}
+              height={25}
+              viewBox="0 0 25 25"
+            ></Icon>
           </div>
         </div>
       </header>
       {showLoginModal && <LoginModal />}
       {showSignUpModal && <SignUpModal />}
+      {showNotificationModal && <NotificationModal />}
       <div
         className={`right-sidebar-menu ${
           state.isRightSidebar ? "show-right-menu" : ""
@@ -270,9 +329,17 @@ const Header2 = () => {
             <h4>Itinerary Type</h4>
             <ul className="category-list">
               <li>
-                <Link href="/activities/activities-details" className="single-category">
+                <Link
+                  href="/activities/activities-details"
+                  className="single-category"
+                >
                   <div className="icon">
-                    <Icon name="adventure" width={45} height={45} viewBox="0 0 45 45"></Icon>
+                    <Icon
+                      name="adventure"
+                      width={45}
+                      height={45}
+                      viewBox="0 0 45 45"
+                    ></Icon>
                   </div>
                   <h6>Adventure</h6>
                 </Link>
@@ -280,33 +347,63 @@ const Header2 = () => {
               <li>
                 <Link
                   href="/activities/activities-details"
-                  className="single-category">
+                  className="single-category"
+                >
                   <div className="icon">
-                    <Icon name="historical" width={45} height={45} viewBox="0 0 45 45"></Icon>
+                    <Icon
+                      name="historical"
+                      width={45}
+                      height={45}
+                      viewBox="0 0 45 45"
+                    ></Icon>
                   </div>
                   <h6>Historical</h6>
                 </Link>
               </li>
               <li>
-                <Link href="/activities/activities-details" className="single-category">
+                <Link
+                  href="/activities/activities-details"
+                  className="single-category"
+                >
                   <div className="icon">
-                  <Icon name="cultural" width={45} height={45} viewBox="0 0 45 45"></Icon>
+                    <Icon
+                      name="cultural"
+                      width={45}
+                      height={45}
+                      viewBox="0 0 45 45"
+                    ></Icon>
                   </div>
                   <h6>Cultural</h6>
                 </Link>
               </li>
               <li>
-                <Link href="/activities/activities-details" className="single-category">
+                <Link
+                  href="/activities/activities-details"
+                  className="single-category"
+                >
                   <div className="icon">
-                   <Icon name="wildlife" width={45} height={45} viewBox="0 0 45 45"></Icon>
+                    <Icon
+                      name="wildlife"
+                      width={45}
+                      height={45}
+                      viewBox="0 0 45 45"
+                    ></Icon>
                   </div>
                   <h6>Wildlife/Nature</h6>
                 </Link>
               </li>
               <li>
-                <Link href="/activities/activities-details" className="single-category">
+                <Link
+                  href="/activities/activities-details"
+                  className="single-category"
+                >
                   <div className="icon">
-                   <Icon name="city" width={45} height={45} viewBox="0 0 45 45"></Icon>
+                    <Icon
+                      name="city"
+                      width={45}
+                      height={45}
+                      viewBox="0 0 45 45"
+                    ></Icon>
                   </div>
                   <h6>City/Urban</h6>
                 </Link>
@@ -422,13 +519,23 @@ const Header2 = () => {
                 </Swiper>
                 <div className="slide-and-view-btn-grp">
                   <div className="destination-sidebar-prev">
-                  <Icon name="destPrev" width={53} height={13} viewBox="0 0 53 13"></Icon>
+                    <Icon
+                      name="destPrev"
+                      width={53}
+                      height={13}
+                      viewBox="0 0 53 13"
+                    ></Icon>
                   </div>
                   <Link href="destination/style2" className="secondary-btn2">
                     View All
                   </Link>
                   <div className="destination-sidebar-next">
-                   <Icon name="destPrev" width={53} height={13} viewBox="0 0 53 13"></Icon>
+                    <Icon
+                      name="destPrev"
+                      width={53}
+                      height={13}
+                      viewBox="0 0 53 13"
+                    ></Icon>
                   </div>
                 </div>
               </div>
@@ -438,12 +545,19 @@ const Header2 = () => {
         <div className="sidebar-bottom">
           <div className="email-area">
             <div className="icon">
-             <Icon name="email" width={27} height={27} viewBox="0 0 27 27"></Icon>
+              <Icon
+                name="email"
+                width={27}
+                height={27}
+                viewBox="0 0 27 27"
+              ></Icon>
             </div>
             <div className="content">
               <span>Email:</span>
               <h6>
-                <a href="mailto:adventuritsinfo@gmail.com">adventuritsinfo@gmail.com</a>
+                <a href="mailto:adventuritsinfo@gmail.com">
+                  adventuritsinfo@gmail.com
+                </a>
               </h6>
             </div>
           </div>
