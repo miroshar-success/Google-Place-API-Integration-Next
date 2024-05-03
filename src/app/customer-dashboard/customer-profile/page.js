@@ -3,10 +3,11 @@ import Header2 from "@/components/header/Header2";
 import Icon from "@/uitils/Icon";
 import SelectComponent from "@/uitils/SelectComponent";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const page = () => {
   const [image, setImage] = useState(null);
+  const [activeTab, setActiveTab] = useState("profile");
   const fileInputRef = useRef(null);
 
   const handleImageUpload = (e) => {
@@ -20,9 +21,27 @@ const page = () => {
     }
   };
 
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+  };
+
   const handleButtonClick = () => {
     fileInputRef.current.click(); // Trigger file input click
   };
+
+  useEffect(() => {
+    const profileTab = document.getElementById("profile-tab");
+    const changePassTab = document.getElementById("change-pass-tab");
+
+    if (activeTab === "profile") {
+      profileTab.classList.add("active");
+      changePassTab.classList.remove("active");
+    } else if (activeTab === "change-pass") {
+      profileTab.classList.remove("active");
+      changePassTab.classList.add("active");
+    }
+  }, [activeTab]);
+
   return (
     <>
       <Header2 />
@@ -89,8 +108,9 @@ const page = () => {
                   >
                     <li className="nav-item" role="presentation">
                       <button
-                        className="nav-link active"
+                        className={`nav-link ${activeTab === "profile" ? "active" : ""}`}
                         id="profile-tab"
+                        onClick={() => handleTabChange("profile")}
                         data-bs-toggle="pill"
                         data-bs-target="#profile"
                         type="button"
@@ -109,8 +129,9 @@ const page = () => {
                     </li>
                     <li className="nav-item" role="presentation">
                       <button
-                        className="nav-link"
+                        className={`nav-link ${activeTab === "change-pass" ? "active" : ""}`}
                         id="change-pass-tab"
+                        onClick={() => handleTabChange("change-pass")}
                         data-bs-toggle="pill"
                         data-bs-target="#change-pass"
                         type="button"
@@ -132,7 +153,7 @@ const page = () => {
                 </div>
                 <div className="tab-content w-100" id="pills-tabContent">
                   <div
-                    className="tab-pane fade active show"
+                    className={`tab-pane fade ${activeTab === "profile" ? "show active" : ""}`}
                     id="profile"
                     role="tabpanel"
                     aria-labelledby="profile-tab"
@@ -253,7 +274,7 @@ const page = () => {
                     </div>
                   </div>
                   <div
-                    className="tab-pane fade"
+                    className={`tab-pane fade ${activeTab === "change-pass" ? "show active" : ""}`}
                     id="change-pass"
                     role="tabpanel"
                     aria-labelledby="change-pass-tab"
