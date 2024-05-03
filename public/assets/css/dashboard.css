@@ -1509,18 +1509,18 @@ ul {
 }
 @media (min-width: 1400px) and (max-width: 1599px) {
   .dashboard-wrapper .main-content .dashboard-profile-wrapper {
-    padding: 50px 30px;
+    padding: 100px 30px;
   }
 }
 @media (max-width: 1399px) {
   .dashboard-wrapper .main-content .dashboard-profile-wrapper {
-    padding: 50px 30px;
+    padding: 100px 30px;
     gap: 30px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .dashboard-wrapper .main-content .dashboard-profile-wrapper {
-    padding: 40px 25px;
+    padding: 75px 25px;
     gap: 20px;
   }
 }
@@ -1532,7 +1532,7 @@ ul {
 }
 @media (max-width: 576px) {
   .dashboard-wrapper .main-content .dashboard-profile-wrapper {
-    padding: 30px 15px;
+    padding: 125px 15px;
   }
 }
 .dashboard-wrapper .main-content .dashboard-profile-wrapper.two {
