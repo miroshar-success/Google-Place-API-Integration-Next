@@ -1,5 +1,6 @@
 import React from 'react'
 import Message from './Message'
+import MessageInput from './MessageInput'
 
 const MessageContainer = () => {
   return (
@@ -12,6 +13,7 @@ const MessageContainer = () => {
           <div className='px-4 flex-1 overflow-auto'>
             <Message/>
           </div>
+          <MessageInput/>
         </>
     </div>
   )
