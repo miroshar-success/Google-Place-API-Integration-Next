@@ -11,14 +11,14 @@ export default function MultiSelectAutocomplete({ label }) {
   const { isLoaded, loadError } = useLoadScript(scriptOptions);
   const [autocomplete, setAutocomplete] = useState(null);
   const [selectedPlaces, setSelectedPlaces] = useState([]);
-  const autocompleteRef = useRef(null);
+  // const autocompleteRef = useRef(null);
   const inputEl = useRef(null);
-
-  useEffect(() => {
-    if (isLoaded) {
-      setAutocomplete(autocompleteRef.current);
-    }
-  }, [isLoaded]);
+  // useEffect(() => {
+  //   console.log(isLoaded);
+  //   if (isLoaded) {
+  //     setAutocomplete(autocompleteRef.current);
+  //   }
+  // }, [isLoaded]);
 
   const onPlaceChanged = () => {
     if (autocomplete) {
@@ -57,8 +57,9 @@ export default function MultiSelectAutocomplete({ label }) {
           </label>
           <Autocomplete
             onLoad={(autocomplete) => {
+              console.log(autocomplete);
               setAutocomplete(autocomplete);
-              autocompleteRef.current = autocomplete;
+              // autocompleteRef.current = autocomplete;
             }}
             fields={["place_id", "name", "geometry", "formatted_address"]}
             onPlaceChanged={onPlaceChanged}
