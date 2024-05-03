@@ -1,30 +1,42 @@
 import React, { useState, useEffect, useRef } from "react";
-import destinations from "../../data/destinationData";
-const DestinationSearch = ({ destination, style, }) => {
+import { useLoadScript, Autocomplete } from "@react-google-maps/api";
+
+const scriptOptions = {
+  googleMapsApiKey: "AIzaSyCMTO6uC2oPpuii98yZi68pKaoIpq2YT_k",
+  libraries: ["places"],
+};
+
+const DestinationSearch = ({ destination, style }) => {
+  const { isLoaded, loadError } = useLoadScript(scriptOptions);
+  const [autocomplete, setAutocomplete] = useState(null);
+  const inputEl = useRef(null);
   const [isActive, setIsActive] = useState(false);
-  const [filteredDestination, setFilteredDestination] = useState("");
-  const [selectedDestination, setSelectedDestination] = useState(
-    destinations.length > 0 ? destinations[0].name : ""
-  );
+  const [selectedDestination, setSelectedDestination] = useState("");
   const searchboxRef = useRef(null);
+
+  const onPlaceChanged = () => {
+    if (autocomplete) {
+      const place = autocomplete.getPlace();
+      if (place && place.geometry && place.geometry.location) {
+        setSelectedDestination(place.name);
+        const selectedPlace = {
+          name: place.name,
+          location: {
+            type: "Point",
+            coordinates: [
+              place.geometry.location.lng(),
+              place.geometry.location.lat(),
+            ],
+          },
+          placeId: place.place_id,
+          address: place.formatted_address,
+        };
+      }
+    }
+  };
 
   const handleToggleActive = () => {
     setIsActive(!isActive);
-  };
-
-  const handleFilterDestination = (event) => {
-    const query = event.target.value;
-    setFilteredDestination(query);
-  };
-
-  const handleSelectDestination = (destination) => {
-    setSelectedDestination(destination);
-    setFilteredDestination("");
-    setIsActive(false);
-  };
-
-  const stopPropagation = (event) => {
-    event.stopPropagation();
   };
 
   const handleClickOutside = (event) => {
@@ -32,17 +44,9 @@ const DestinationSearch = ({ destination, style, }) => {
       setIsActive(false);
     }
   };
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
-  const filteredDestinations = destinations.filter((destination) =>
-    destination.name.toLowerCase().includes(filteredDestination.toLowerCase())
-  );
+  const stopPropagation = (event) => {
+    event.stopPropagation();
+  };
 
   return (
     <div
@@ -63,41 +67,31 @@ const DestinationSearch = ({ destination, style, }) => {
         </div>
         <div className={`${isActive ? "active" : ""} custom-select-wrap `}>
           <div className="custom-select-search-area">
-            <i className="bx bx-search" />
-            <input
-              type="text"
-              placeholder="Type Your Destination"
-              value={filteredDestination}
-              onChange={handleFilterDestination}
-              onClick={stopPropagation}
-            />
-          </div>
-          <ul className="option-list">
-            {filteredDestinations.length > 0 ? (
-              filteredDestinations.map((destination, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleSelectDestination(destination.name)}
-                >
-                  <div className="destination">
-                    <h6>{destination.name}</h6>
-                    <p>{destination.locations}</p>
-                  </div>
-                  <div className="tour">
-                    <span>
-                      {destination.tourCount} <br /> Tour
-                    </span>
-                  </div>
-                </li>
-              ))
-            ) : (
-              <li>
-                <div className="destination">
-                  <h6>Not Found</h6>
-                </div>
-              </li>
+            {loadError && (
+              <div>
+                Google Map script can't be loaded, please reload the page
+              </div>
             )}
-          </ul>
+            {isLoaded && (
+              <React.Fragment>
+                <Autocomplete
+                  onLoad={(autocomplete) => {
+                    setAutocomplete(autocomplete);
+                  }}
+                  fields={["place_id", "name", "geometry", "formatted_address"]}
+                  onPlaceChanged={onPlaceChanged}
+                >
+                    <input
+                      ref={inputEl}
+                      type="text"
+                      className="form-input"
+                      placeholder="Search for places"
+                      onClick={stopPropagation}
+                    />
+                </Autocomplete>
+              </React.Fragment>
+            )}
+          </div>
         </div>
       </div>
     </div>
