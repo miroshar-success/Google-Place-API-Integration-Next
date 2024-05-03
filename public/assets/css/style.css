@@ -5317,7 +5317,9 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   letter-spacing: 0.3px;
   text-transform: capitalize;
 }
-.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn {
+.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn,
+.signup-modal-btn
+{
   border-radius: 35px;
   background-color: var(--title-color);
   font-family: var(--font-rubik);
@@ -5339,11 +5341,15 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   width: 100%;
 }
 @media (max-width: 576px) {
-  .login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn {
+  .login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn,
+  .signup-modal-btn
+  {
     font-size: 15px;
   }
 }
-.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn::after {
+.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn::after,
+.signup-modal-btn:after
+{
   position: absolute;
   content: "";
   border-radius: 30px;
@@ -5357,10 +5363,14 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   z-index: -1;
   transition: transform 0.7s;
 }
-.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn:hover {
+.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn:hover,
+.signup-modal-btn:hover
+{
   color: var(--title-color);
 }
-.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn:hover::after {
+.login-modal .modal-dialog .modal-content .modal-body .login-registration-form .login-btn:hover::after,
+.signup-modal-btn:hover::after
+{
   transform: scalex(1);
   transform-origin: left;
 }
@@ -28989,10 +28999,15 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 
 .modal.login-modal,
 .modal.signup-modal,
-.modal.notification-modal
+.modal.notification-modal,
+.modal.activity-modal
 {
   display: block !important;
   opacity: 1 !important;
+}
+
+.signup-modal .modal-header {
+  padding: 0;
 }
 .modal .modal-header {
   position: relative;
@@ -29082,4 +29097,16 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 .notification-item .timestamp {
   display: flex;
   justify-content: end;
+}
+
+.add-activity-button {
+  padding: 10px 20px;
+  background-color: green;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pac-container {
+  z-index: +10000 !important;
 }

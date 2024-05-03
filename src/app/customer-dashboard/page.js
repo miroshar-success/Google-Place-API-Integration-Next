@@ -1,10 +1,20 @@
+"use client"
 import SearchForm from "@/components/GoogleSearchForm/searchForm";
 import Header2 from "@/components/header/Header2";
 import Icon from "@/uitils/Icon";
 import QuantityCounter from "@/uitils/QuantityCounter";
 import Link from "next/link";
-import React from "react";
+import React, { useContext, useState } from "react";
+import ActivityModal from "@/components/common/ActivityModal";
+import { AuthContext } from "@/hooks/AuthContext";
 const page = () => {
+  const { showActivityModal, toggleActivityModal } = useContext(AuthContext);
+  const [ activityModalData, setActivityModalData] = useState({});
+  const handleSaveModalData = (data) => {
+    console.log(data);
+    setActivityModalData(data);
+    // You can perform any other actions you need with the saved data here
+  };
   return (
     <>
       <Header2 />
@@ -161,11 +171,12 @@ const page = () => {
                           </div>
                         </div>
                         <div className="form-inner mb-20">
-                          <button
-                            className="nav-link show active"
+                          <a
+                            className="add-activity-button"
+                            onClick={toggleActivityModal}
                           >
                             Add Activity
-                          </button>
+                          </a>
                         </div>
                         <div className="form-inner mb-20">
                           <label>
@@ -200,6 +211,12 @@ const page = () => {
                           </button>
                         </div>
                       </form>
+                      {showActivityModal && (
+                          <ActivityModal
+                            onSave={handleSaveModalData}
+                            onClose={toggleActivityModal}
+                          />
+                        )}
                     </div>
                   </div>
                 </div>
