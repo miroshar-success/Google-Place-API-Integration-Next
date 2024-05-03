@@ -5936,7 +5936,6 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 .home1-banner-bottom .filter-wrapper .filter-group form .filter-area .single-search-box .searchbox-input .custom-select-dropdown .custom-select-wrap .custom-select-search-area {
   border-bottom: 1px solid #dee2e6;
   margin-bottom: 5px;
-  display: flex;
   align-items: center;
   gap: 5px;
   margin: 0 10px 5px 10px;
